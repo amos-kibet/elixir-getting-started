@@ -3,19 +3,32 @@
 A list in Elixir is a linked data structure.
 It can either be empty or consist of a head and a tail. The head contains a value and the tail is itself a list.
 
-Elixir lists are easy to traverse linearly, but expensive to access in random order.
+Lists in Elixir are effectively linked lists, which means they are internally represented in pairs containing the head and the tail of a list:
+
+```elixir
+iex(1)> [head | tail] = [1, 2, 3]
+[1, 2, 3]
+
+iex(2)> head
+1
+
+iex(3)> tail
+[2, 3]
+```
+
+Elixir lists are easy to traverse linearly, but expensive to access in random order. Access takes linear time.
 
 From the definition, list is constructed recursively, as shown below:
 
 ```
 empty list => []
-add 1 to the empty list => [1 | []] , here, a pipe (|) is used to separate the head and tail of the list
+add 1 to the empty list => [1 | []] , here, a 'pipe' (|) is used to separate the head and tail of the list
 add 2 => [2 | [1 |[]]
 add 3 => [3 | [2 | [1 | []]]]
 the resulting list will look like this => [3, 2, 1]
 ```
 
-`[3, 2, 1]` is just syntactic sugar for `[3 | [2 | [1 | []]]]`
+`[3, 2, 1]` is just syntactic sugar. Internally, ELixir represents such a list as `[3 | [2 | [1 | []]]]`
 
 ### Example1: Writing the list-length algorithm
 
@@ -23,7 +36,7 @@ the resulting list will look like this => [3, 2, 1]
 # mylist.exs
 defmodule MyList do
   def len([]), do: 0
-  def len([_head|tail]), do: 1 + len(tail) # undescore head to avoid unused vairable warning
+  def len([_head|tail]), do: 1 + len(tail) # undescore head to avoid unused variable warning
 end
 
 # iex
@@ -73,7 +86,14 @@ true
 
 iex(4)>"amos" in [1,2,3]
 false
+
+iex(5)>[4 | [3, 2, 1]] # prepending
+[4, 3, 2, 1]
+
+iex(6)>[3, 2, 1] ++ [4]
 ```
+
+### Built-in Kernel Functions
 
 `Q`: Write a mapsum function that takes a list and a function. It applies the function to each element of the list and then sums the result, so
 `iex> MyList.mapsum [1, 2, 3], &(&1 * &2) # results to 14`
