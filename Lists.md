@@ -90,7 +90,8 @@ false
 iex(5)>[4 | [3, 2, 1]] # prepending
 [4, 3, 2, 1]
 
-iex(6)>[3, 2, 1] ++ [4]
+iex(6)>[3, 2, 1] ++ [4] # appending
+[3, 2, 1, 4]
 ```
 
 ### Built-in Kernel Functions
