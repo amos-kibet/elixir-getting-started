@@ -28,7 +28,7 @@ add 3 => [3 | [2 | [1 | []]]]
 the resulting list will look like this => [3, 2, 1]
 ```
 
-`[3, 2, 1]` is just syntactic sugar. Internally, ELixir represents such a list as `[3 | [2 | [1 | []]]]`
+`[3, 2, 1]` is just syntactic sugar. Internally, Elixir represents such a list as `[3 | [2 | [1 | []]]]`
 
 ### Example1: Writing the list-length algorithm
 
@@ -43,7 +43,7 @@ end
 iex(1)> c "mylist.exs"
 [MyList]
 
-iex(2)> MyList.len(0)
+iex(2)> MyList.len([])
 0
 
 iex(3)> MyList.len([1,2,3,4,5])
@@ -75,7 +75,7 @@ iex(3)> MyList.square([1, 2, 3])
 ### Example Operations on Lists
 
 ```elixir
-iex(1)>[1,2,3] ++ [4,5,6] # concatenation
+iex(1)>[1,2,3] ++ [4,5,6] # concatenation or appending (expensive operation)
 [1,2,3,4,5,6]
 
 iex(2)>[1,2,3,4] -- [2,3] # difference
