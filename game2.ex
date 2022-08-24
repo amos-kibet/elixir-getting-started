@@ -13,8 +13,8 @@ defmodule Game2 do
     c Create a function that generates a question to ask the user
     d. Create a function that asks the user the arithmetic question
 
-  3. EValuate the answer entered from step above
-      a. Find tha correct answer from the question asked
+  3. Evaluate the answer entered from step above
+      a. Find the correct answer from the question asked
       b. Compare the correct answer to the answer entered by user
       c. Return appropriate response from the comparisons
           1. If correct:
@@ -22,13 +22,13 @@ defmodule Game2 do
               b. Ask the user if they want to play again
 
           2. If not correct:
-              a. Prinit "The correct answer is 30"
+              a. Print "The correct answer is 30"
               b. Ask the user if they want to play again
   """
 
 
   @doc """
-  Asks the user user whether or not they want to play and then processes their answer
+  Asks the user user whether or not they want to play and then process their answer
   """
   def start do
     question = "Do you wish to play a game? Choose Yes or No\n"

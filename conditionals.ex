@@ -14,7 +14,7 @@ defmodule Conditionals do
   => Think of case as switch from javascript (However, more powerful and functional)
 
   When to use it?
-  ----------------a
+  ----------------
 
   - Used when you want to do different things based on the value of the given condition, especially
     if the value is not true or false
@@ -27,10 +27,10 @@ defmodule Conditionals do
   ---------
 
     case expression do
-      pattern1 [guards1, gauard2, ..gauardN] ->
+      pattern1 [guard1, gauard2, ..gauardN] ->
         expression1
 
-      pattern2 [gaurad1, guard2, ..guardN] ->
+      pattern2 [guard1, guard2, ..guardN] ->
         expression2
 
       patternN ->
@@ -40,8 +40,7 @@ defmodule Conditionals do
   """
 
   @doc """
-  This is a simple calulator  function that performs on of the basic 4 arithmetic
-  calculation depending on the sign provided
+  This is a simple calulator  function that performs one of the basic 4 arithmetic calculations depending on the sign provided
 
   ## Examples
       iex> calculate(+, 1, 2)
@@ -58,7 +57,7 @@ defmodule Conditionals do
 
   """
 
-  # defguard is_string(value) when is_binary(value)
+  # defguard is_string(value) when is_binary(value) --> custom is-string guard, based on the built-in is_binary guard
 
   def calculate(sign, a, b) when is_binary(sign) do
     # in this example we will use case to perfom the different operations
@@ -77,15 +76,18 @@ defmodule Conditionals do
     end
   end
 
+  # the above function can be rewritten without case as shown below
   def calc_with_fun("+", a, b), do: a + b
   def calc_with_fun("-", a, b), do: a - b
   def calc_with_fun("*", a, b), do: a * b
   def calc_with_fun("/", a, b), do: a / b
-
+  # or this way,
   def calc_with_fun(sign, a, b) when sign == "+", do: a + b
   def calc_with_fun(sign, a, b) when sign == "-", do: a - b
+  def calc_with_fun(sign, a, b) when sign == "*", do: a * b
+  def calc_with_fun(sign, a, b) when sign == "/", do: a / b
 
-  # We use if, when we are conparing a conditionals that return either true or false
+  # We use if, when we are conparing a conditional that returns either true or false
   def is_valid?(value) do
     if value == true do
       IO.puts("Is valid")

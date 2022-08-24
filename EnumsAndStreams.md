@@ -53,7 +53,7 @@ iex()> Enum.sort(string_list, &(String.length(&1) <= String.length(&2))) # Note:
 ["a", "was", "man", "there", "crooked"]
 
 iex()> Enum.max(string_list)
-"was" # I don't understand why this result. Orders the elements by erlang's structure (read more)
+"was" # I don't understand this result. Orders the elements by erlang's structure (read more)
 
 iex()> Enum.max_by(string_length, &String.length/1)
 "crooked"
