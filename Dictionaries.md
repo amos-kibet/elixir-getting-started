@@ -28,7 +28,7 @@ Keyword List Built-in Function:
     "Amos" # Note it does not return "Kibet"
     ```
 
-- `Keyword.get_values/2 => pass the keyword list as arg1, and key as arg2. Returns all values of the passed key.
+- `Keyword.get_values/2` => pass the keyword list as arg1, and key as arg2. Returns all values of the passed key.
 
   - ```elixir
     iex(1)> Keyword.get_values(kw, :name)
