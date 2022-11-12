@@ -45,7 +45,8 @@ These are the modules that handle Elixir built-in data types:
 
 There are two data types without an accompanying module:
 
-`Bitstrings` => a sequence of bits, created with `Kernel.SpecialForms.<<>>/1 `Reference`=> a unique value in the runtime system, created with`make_ref/0`
+- `Bitstrings` => a sequence of bits, created with `Kernel.SpecialForms.<<>>/1
+- `Reference`=> a unique value in the runtime system, created with`make_ref/0`
 
 Elixir also provides other data types that are built on top of the types listed above. Some of them are:
 
