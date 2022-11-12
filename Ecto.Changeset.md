@@ -31,9 +31,9 @@ iex> Ecto.Changeset.cast(%Friends.Person{name: "Amos"}, %{}, [:name, :age])
 ```
 
 - In the above changeset,
-  -- The first parameter is the original data - an initial `%Friends.Person{}` struct
-  -- Sexcond parameter holds the changes we want to make - in this case an empty map.
-  -- Third parameter is what makes `cast/3` special: it is a list of fields allowed to go through, which gives the ability to control what fields can be changed and safe-guard the rest
+  - The first parameter is the original data - an initial `%Friends.Person{}` struct
+  - Second parameter holds the changes we want to make - in this case an empty map.
+  - Third parameter is what makes `cast/3` special: it is a list of fields allowed to go through, which gives the ability to control what fields can be changed and safe-guard the rest
 
 ```
 iex> Ecto.Changeset.cast(%Friends.Person{name: "Bob"}, %{"name" => "Jack"}, [:name, :age])
@@ -121,10 +121,10 @@ end
 
 - A helper function `put_changes/3 is used for this purpose
 
-- In our example, rather than making the `name` field required, let's allow users to sign up without a name, and call them "Anonymouse":
+- In our example, rather than making the `name` field required, let's allow users to sign up without a name, and call them "Anonymous":
 
 ```
-def set_name_if_anonymouse(changeset) do
+def set_name_if_anonymous(changeset) do
   name = get_field(changeset, :name)
 
   if is_nil(name) do
