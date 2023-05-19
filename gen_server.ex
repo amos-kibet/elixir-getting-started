@@ -27,9 +27,9 @@ defmodule AnnoyingPassengerAutoresponder do
         true -> "..."
       end
 
-      # increase the count of questions asked
-      new_state = state + 1
-      # reply to the caller
-      {:reply, reply, new_state}
+    # increase the count of questions asked
+    new_state = state + 1
+    # reply to the caller
+    {:reply, reply, new_state}
   end
 end

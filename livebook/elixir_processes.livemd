@@ -1,0 +1,109 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Elixir Processes
+
+## Simple Process
+
+```elixir
+process_id = self()
+
+spawn(fn -> send(process_id, {:hello, "Message sent and received"}) end)
+
+receive do
+  {:hello, message} -> IO.puts(message)
+end
+
+Process.info(self(), :messages)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Message sent and received
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:messages,
+ [
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received"
+ ]}
+```
+
+## Simple Process with Timer
+
+```elixir
+process_id = self()
+
+spawn(fn -> send(process_id, {:nonmatchingkey, "Message sent and received"}) end)
+
+receive do
+  {:hello, message} -> IO.puts(message)
+  {:hello, _any} -> IO.puts("Key match found")
+  {:nonmatchingkey, msg} -> IO.puts(msg)
+after
+  1_000 -> IO.puts("No matching key was found")
+end
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Message sent and received
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
+```
+
+## Simple Simple Process
+
+```elixir
+spawn(fn -> IO.puts("Hello world!") end)
+|> Process.info(:memory)
+
+Process.info(self(), :messages)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Hello world!
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:messages,
+ [
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received",
+   nonmatchingkey: "Message sent and received"
+ ]}
+```
+
+## Process inside Module
+
+```elixir
+defmodule Salutator do
+  def run do
+    receive do
+      {:hi, name} -> IO.puts("Hi #{name}")
+      {_, name} -> IO.puts("Hello #{name}")
+    end
+
+    # to enable sending & receiving multiple messages
+    run()
+  end
+end
+```

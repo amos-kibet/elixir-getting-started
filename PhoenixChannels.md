@@ -32,7 +32,7 @@ where `UserSocket` is the module that implements Phoenix socket connection, and 
 
 Channel routes match on the topic string and dispatch matching requests to the given Channel module.
 
-The star character `*` acts as a wildcard matcher, so in the following example route, requests for `room:lobby` and `room:123` would both be dispatched to the `RoomChannel`. In your UserSocket, you would have:
+The star character `*` acts as a wildcard matcher, so in the following example route, requests for `room:lobby` and `room:123` would both be dispatched to the `RoomChannel`. In your UserSocket module, you would have:
 
 ```elixir
 channel "room:*", MyAppWeb.RoomChannel
@@ -53,7 +53,7 @@ The `Phoenix.Socket.Message` module defines a struct with the following keys whi
 - `payload` - The message payload
 - `ref` - The unique string ref
 
-## Fault Tolerance & Reliebilty Guarantees
+## Fault Tolerance & Reliabilty Guarantees
 
 **Handling Reconnection**:
 

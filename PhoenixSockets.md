@@ -1,6 +1,6 @@
 # Phoenix Sockets
 
-`Phoeninx.Socket` is a `WebSocket` implementation that multiplexes messages over Phoenix channels.
+`Phoenix.Socket` is a `WebSocket` implementation that multiplexes messages over Phoenix channels.
 
 Once connected to a socket, incoming and outgoing events are routed to channels.
 
@@ -55,7 +55,7 @@ MyAppWeb.Endpoint.broadcast("users_socket:" <> user.id, "disconnect", %{})
 - `:transport_pid` - The pid of the socket's transport process
 - `:serializer` - The serializer for socket messages
 
-**Other Accepted OPtions**:
+**Other Accepted Options**:
 
 - `:log` - the default level to log socket actions. Defaults to `:info`. May be set to `false` to disable it
 - `:partitions` - each channel is spawned under a supervisor. This option controls how many supervisors will be spawned to handle channels. Defaults to the number of cores.

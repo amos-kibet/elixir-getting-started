@@ -107,7 +107,7 @@ iex(8)> map2.profession
 iex(9)> map.profession
 "Programmer"
 
-iex(10)> map.has_key? map, :name
+iex(10)> Map.has_key? map, :name
 true
 
 iex(11)> Map.has_key? map, :married

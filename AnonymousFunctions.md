@@ -23,7 +23,7 @@ iex(2)> sum.(1, 2)
 3
 ```
 
-The dot (.) in the function invokation above indicates function call. WIth named functions, we don't use a dot for function calls.
+The dot (.) in the function invocation above indicates function call. WIth named functions, we don't use a dot for function calls.
 
 ### Using Pattern Matching to reverse order of elements in a tuple
 
@@ -73,14 +73,14 @@ iex(3)> apply.(times_2, 6)
 
 ### The `&` Operator
 
-COnverts the expression that follows inot a function.
+Converts the expression that follows into a function.
 Inside that expression, the placeholders &1, &2, and so on correspond to the first, second, and subsequent parameters of the function.
 
 ```
 &(&1 + &2) === fn p1, p2 -> p1 + p2 end
 ```
 
-### Usecases
+### Use cases
 
 These functions are used when we want to pass a function as an argument to another function.
 Enum module uses anonymous functions.

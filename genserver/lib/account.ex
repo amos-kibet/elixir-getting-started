@@ -1,4 +1,4 @@
-defmodule Account do
+defmodule Genserver.Account do
   use GenServer
 
   def start_link do
