@@ -35,3 +35,9 @@ Languages running on the BEAM have to comply with its characteristics. The BEAM:
 - Errors have a minimal impact.
 - Manages a recovery mechanism against those errors.
 - It makes the most of the host computer's resources.
+
+## Open Telecom Platform (OTP)
+
+OTP is a set of Erlang libraries, which consists of the Erlang runtime system (ERTS), a number of ready-to-use components mainly written in Erlang, and a set of design principles for Erlang programs.
+
+OTP provides modules and behaviours that represent standard implementations of common practices like process supervision, message passing, spawning tasks, etc.

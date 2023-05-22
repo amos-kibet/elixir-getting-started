@@ -16,7 +16,7 @@ This is simply the magic behind the scalability, distribution, and fault toleran
 
 ### Fault-tolerance
 
-The fault tolerance of a system refers to its ability to handle errors. The goal is that no failure, no matter how critical, disables or blocks the system and this is again achienved thanks to Erlang processes.
+The fault tolerance of a system refers to its ability to handle errors. The goal is that no failure, no matter how critical, disables or blocks the system, and this is again achieved, thanks to Erlang processes.
 The processes are isolated elements that do not share memory and communicate through message passing.
 
 ![Fault-tolerance](media/Fault-tolerance.png)
@@ -150,3 +150,5 @@ def validate_email(user) do
  end
 end
 ```
+
+Concurrency is the foundation for the other features of the BEAM, distribution, scalability, and fault tolerance.

@@ -24,4 +24,4 @@ defstruct
 
 @optional_callbacks
 
-defmacro, defmodule, defguard, def
+defmacro, defguard, def
