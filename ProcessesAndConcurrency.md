@@ -3,11 +3,23 @@
 ### Processes
 
 In Elixir, all code runs inside processes, and an application can have hundreds or thousands of them running concurrently.
-Concurrency is achienved thanks to Erlang processes, which are created and managed by the BEAM
+
+A process is an isolated entity where code execution happens and they are the base tp design software systems taking advantage of the BEAM features.
+
+A Process is a built-in memory with the following parts:
+
+- **Stack:** To keep local variables.
+- **Heap:** To keep larger structures.
+- **Mailbox:** Store messages sent from other porcesses.
+- **Process Control Block:** Keeps track of the state of the process.
+
+Concurrency is achieved thanks to Erlang processes, which are created and managed by the BEAM
 
 **How does it work?**
 
-When the BEAM runs on a machine, it creates a `thread` on each available `processor` by default.In this `thread`, there is a `queue` dedicated to specific `tasks`, and each `queue` has a `scheduler` responsible for assigning a time and priority to the `tasks`.
+When the BEAM runs on a machine, it creates a `thread` on each available `processor` by default. In this `thread`, there is a `queue` dedicated to specific `tasks`, and each `queue` has a `scheduler` responsible for assigning time and priority to the `tasks`.
+
+Simply put, process lifecycle involves (1) process creation, (2) code execution, and (3) process termination.
 
 ![Concurrency screenshot](media/Concurrency.png)
 
