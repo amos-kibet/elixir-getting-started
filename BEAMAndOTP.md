@@ -18,7 +18,7 @@ Erlang platform is best used to build distributed, scalable, concurrent and faul
 
 - Require a large number of users and support easily adding more if necessary.
 - Can easily detect and recover from errors.
-- Always responds, even if there is an internal error. This means that the system cannot pause or wait indefinitely since that represents uncertainity for the users.
+- Always respond, even if there is an internal error. This means that the system cannot pause or wait indefinitely since that represents uncertainity for the users.
 - Can be updated without stopping or interrupting user activities.
 - Can be distributed.
 
@@ -29,7 +29,9 @@ Elixir code is compiled into bytecode files that run on the virtual machine, and
 
 ![The BEAM](media/2.The-BEAM.png)
 
-Languages running on the BEAM have to comply with its characteristics. The BEAM:
+Languages running on the BEAM have to comply with its characteristics.
+
+The BEAM:
 
 - Manages concurrency and parallelism of a system.
 - Errors have a minimal impact.
