@@ -83,16 +83,17 @@ end
 ```
 
 - Some other built-in validators in `Ecto.Changeset` are:
-  -- validate_length/2
-  -- validate_acceptance/3
-  -- validate_change/3 & /4
-  -- validate_confirmation/3
-  -- validate_exclusion/4 & validate_inclusion/4
-  -- validate_format/4
-  -- validate_number/3
-  -- validate_subset/4
 
-  #### Custom Validations
+  - validate_length/2
+  - validate_acceptance/3
+  - validate_change/3 & /4
+  - validate_confirmation/3
+  - validate_exclusion/4 & validate_inclusion/4
+  - validate_format/4
+  - validate_number/3
+  - validate_subset/4
+
+  #### **Custom Validations**
 
   - We can create our own validators, as seen below:
 
@@ -119,7 +120,7 @@ end
 
 #### Adding Changes Manually
 
-- A helper function `put_changes/3 is used for this purpose
+- A helper function `put_changes/3` is used for this purpose
 
 - In our example, rather than making the `name` field required, let's allow users to sign up without a name, and call them "Anonymous":
 
@@ -142,7 +143,7 @@ def registration_changeset(struct, params) do
 end
 ```
 
-- Having changeset creator functions that have specific responsibility(like `registration_changeset/2`) is common practice.
+- Having changeset creator functions that have specific responsibility (like `registration_changeset/2`) is common practice.
 - The above function could be used in a dedicated `sign_up/1` helper function:
 
 ```
