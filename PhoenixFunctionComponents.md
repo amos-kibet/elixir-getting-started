@@ -15,13 +15,13 @@ defmodule MyComponent do
 end
 ```
 
-    When invoked within a `~H` sigil or `HEEx` teemplate file:
+When invoked within a `~H` sigil or `HEEx` template file:
 
 ```elixir
 <MyComponent.greet name="Jane" />
 ```
 
-    The following `HTML` is rendered:
+The following `HTML` is rendered:
 
 ```html
 <p>Hello, Jane!</p>
@@ -56,7 +56,7 @@ end
 
 ### Global Attributes
 
-- Global attributes are attributes common to all HTML elements;.`class`, `id`, `hidden`, `data-*`, `autofocus`, [etc](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes).
+- Global attributes are attributes common to all HTML elements: `class`, `id`, `hidden`, `data-*`, `autofocus`, [etc](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes).
 - You can declare a `:global` attribute, which enables your functional component to accept any number of global HTML attributes, and Phoenix bindings; `phx-click`, `phx-click-away`, `phx-value-*`, `phx-hook`, [etc](https://hexdocs.pm/phoenix_live_view/bindings.html).
 - **Included globals** - You may specify which attributes are included, in addition to the known globals with the `:include` option:
 

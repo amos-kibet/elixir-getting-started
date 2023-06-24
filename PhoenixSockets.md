@@ -12,7 +12,7 @@ channel "room:lobby", MyAppWeb.LobbyChannel
 
 ## Socket Behaviour
 
-Socket handlers are mounted in Endpoints and must define two callbacks:
+Socket handlers are mounted in the Endpoint and must define two callbacks:
 
 - `connect/3` - receives the socket params, connection info if any, and authenticates the connection. Must return a `Phoenix.Socket` struct, often with custom assigns
 

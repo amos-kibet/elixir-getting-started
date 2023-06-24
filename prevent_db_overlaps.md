@@ -5,7 +5,7 @@ Imagine you build an appointment scheduling service.
 A service that allows patients to book an appointment with their doctor.
 You want to prevent double-booking of a doctor for the same time slot.
 So, if one patient has an appointment on Tuesday from 9am to 10am,
-another patient shouldn’t be able to book that same time slot
+another patient shouldn’t be able to book that same time slot.
 
 Implements Exclusion Constraint
 [READ](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION)
@@ -54,7 +54,7 @@ defmodule Demo.Repo.Migrations.CreateAppointments do
       EXCLUDE USING GIST (
         doctor_id WITH =,
         tsrange("from", "until", '[)') WITH &&
-      ) WHERE (NOT canceled);
+      ) WHERE (NOT cancelled);
     """
   end
 

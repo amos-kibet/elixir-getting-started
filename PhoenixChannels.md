@@ -2,7 +2,7 @@
 
 Clients connect to the server using some transport, like **WebSocket**.
 Once connected, they join one or more topics. For example, to interact with a public chat room, clients may join a topic called `public_chat`,
-and to receive updates from a product wit ID 7, they may join a topic
+and to receive updates from a product with ID 7, they may join a topic
 called `product_updates:7`.
 
 Clients push messages to the topics they've joined, and can also receive messages from them. Channel servers can also send and receive messages from their connected clients.

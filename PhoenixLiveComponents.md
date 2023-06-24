@@ -26,17 +26,16 @@ end
 ```
 
 - You must always pass the `module` and `id` attributes. The `id` will be available as an assign and it must be used to uniquely identify the component. All other attributes will be available as assigns inside the LiveComponent.
-
-### Life-cycle
-
-**Mount and update**
-
 - Stateful components are identified by the component module and their ID.
 - We often tie the component ID to some application based ID:
 
 ```elixir
 <.live_component module={UserComponent} id={@user.id} user={@user} />
 ```
+
+### Life-cycle
+
+**Mount and update**
 
 - When `live_component/1` is called, `mount/1` is called once, when the component is first added to the page. `mount/1` receives the socket as argument. Then, `update/2` is invoked with all of the assigns given to `live_component/1`. If `update/2` is not defined all assigns are simply merged into the socket. The assigns received as the first argument of the `update/2` callback will only include the new assigns passed from this function. Pre-existing assigns may be found in `socket.assigns`.
 - After the component is updated, `render/1` is called with all assigns. On first render, we get:
@@ -188,7 +187,7 @@ end
 
 ```elixir
 def handle_info({:updated_card, card}, socket) do
-  send_update CardComponent, id: card.id, board_id: socket.assigns.id
+  send_update(CardComponent, id: card.id, board_id: socket.assigns.id)
   {:noreply, socket}
 end
 ```
