@@ -43,8 +43,10 @@ end
 ```
 
 ```elixir
-<.celebrate name={"Genevieve"} age={34} class="bg-green-300" phx-click="close">
+<.celebrate name={"Genevieve"} age={34} class="bg-green-300" phx-click="close" />
 ```
+
+is equivalent to the following `HTML`:
 
 ```html
 <p class="bg-green-300" phx-click="close">
@@ -56,7 +58,7 @@ end
 
 ### Global Attributes
 
-- Global attributes are attributes common to all HTML elements: `class`, `id`, `hidden`, `data-*`, `autofocus`, [etc](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes).
+- Global attributes are attributes common to all `HTML` elements: `class`, `id`, `hidden`, `data-*`, `autofocus`, [etc](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes).
 - You can declare a `:global` attribute, which enables your functional component to accept any number of global HTML attributes, and Phoenix bindings; `phx-click`, `phx-click-away`, `phx-value-*`, `phx-hook`, [etc](https://hexdocs.pm/phoenix_live_view/bindings.html).
 - **Included globals** - You may specify which attributes are included, in addition to the known globals with the `:include` option:
 
@@ -135,7 +137,7 @@ def unordered_list(assigns) do
 end
 ```
 
-    When invoking the function component, you can use the special attribute (:let) to take the value that the function component passes back and bind it to a variable:
+When invoking the function component, you can use the special attribute (`:let`) to take the value that the function component passes back and bind it to a variable:
 
 ```elixir
 <.unordered_list :let={fruit} entries={~w(apples bananas cherries)}>
@@ -233,7 +235,7 @@ def table(assigns) do
 end
 ```
 
-    You can invoke this function component like so:
+You can invoke this function component like so:
 
 ```elixir
 <.table rows={[%{name: "Jane", age: "34"}, %{name: "Bob", age: "51"}]}>
@@ -246,7 +248,7 @@ end
 </.table>
 ```
 
-    Rendering the following HTML:
+Rendering the following HTML:
 
 ```HTML
 <table>
@@ -277,7 +279,7 @@ end
 │   └── features_card.html.heex
 ```
 
-    Then you can embed the page templates in your "components.ex" module and call them like any other function component:
+Then you can embed the page templates in your "components.ex" module and call them like any other function component:
 
 ```elixir
 defmodule MyAppWeb.Components do
