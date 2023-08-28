@@ -79,7 +79,7 @@ end
 use Phoenix.Component, global_prefixes: ~w(x-)
 ```
 
-    In you Phoenix application, this is typically done in your lib/my_app_web.ex file, inside the def html definition:
+In your Phoenix application, this is typically done in your lib/my_app_web.ex file, inside the def html definition:
 
 ```elixir
 def html do
@@ -108,12 +108,14 @@ end
     You can invoke this function component like so:
 
 ```elixir
+~H"""
 <.button>
     This renders <strong>inside</strong> the button!
 </.button>
+"""
 ```
 
-    Which renders the following HTML:
+Which renders the following HTML:
 
 ```elixir
 <button>
@@ -182,12 +184,14 @@ end
     You can invoke this function component using the named slot HEEx syntax:
 
 ```elixir
+~H"""
 <.modal>
   This is the body, everything not in a named slot is rendered in the default slot.
   <:footer>
     This is the bottom of the modal.
   </:footer>
 </.modal>
+"""
 ```
 
     Rendering the following HTML:
@@ -195,7 +199,7 @@ end
 ```HTML
 <div class="modal">
   <div class="modal-header">
-    Modal.
+    Modal
   </div>
   <div class="modal-body">
     This is the body, everything not in a named slot is rendered in the default slot.

@@ -50,7 +50,7 @@ mount(socket) -> update(assigns, socket) -> render(assigns)
 update(assigns, socket) -> render(assigns)
 ```
 
-- The given id is not automatically used as the DOM ID. If you want to set a DOM ID, it is your responsibility to do so when rendering:
+- The given ID is not automatically used as the DOM ID. If you want to set a DOM ID, it is your responsibility to do so when rendering:
 
 ```elixir
 defmodule UserComponent do
