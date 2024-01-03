@@ -1,7 +1,7 @@
 ## Phoenix.LiveComponent ([Read more](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveComponent.html))
 
 - LiveComponents are a mechanism to compartmentalize **state**, **markup**, and **events** in LiveView.
-- LiveComponents are defined by using `Phoenix.LiveComponent` and are used by calling `Phoenix.Component.live_component/1` in a parent LiveView.
+- LiveComponents are defined by `use`-ing `Phoenix.LiveComponent` and are used by calling `Phoenix.Component.live_component/1` in a parent LiveView.
 - LiveComponents run inside the LiveView process but have their own state and life-cycle. This is why they are referred to as "stateful components".
 - The smallest LiveComponent only needs to define a `render/1` function:
 
@@ -38,7 +38,8 @@ end
 **Mount and update**
 
 - When `live_component/1` is called, `mount/1` is called once, when the component is first added to the page. `mount/1` receives the socket as argument. Then, `update/2` is invoked with all of the assigns given to `live_component/1`. If `update/2` is not defined all assigns are simply merged into the socket. The assigns received as the first argument of the `update/2` callback will only include the new assigns passed from this function. Pre-existing assigns may be found in `socket.assigns`.
-- After the component is updated, `render/1` is called with all assigns. On first render, we get:
+- After the component is updated, `render/1` is called with all assigns.
+- On first render, we get:
 
 ```elixir
 mount(socket) -> update(assigns, socket) -> render(assigns)
